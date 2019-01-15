@@ -2,7 +2,7 @@ import React from 'react';
 
 class Card extends React.Component {
   handleClick = () => {
-    alert('clicked!');
+    this.props.history.push('/store');
   };
 
   render() {

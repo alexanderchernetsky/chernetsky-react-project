@@ -8,6 +8,8 @@
   width 100vw
   height 100vh
   position relative
+  box-sizing border-box
+  padding 1px // to prevent margin collapsing
 
 .header
   font-size 60px
@@ -41,7 +43,6 @@
     text-shadow 4px 4px 8px rgba(0,0,0,0.75)
 
 
-
 .card__picture
   background-image url("../images/pizza-sketch.PNG")
   background-repeat no-repeat
@@ -52,3 +53,27 @@
   top 50%
   left 50%
   transform translate(-50%, -60%)
+
+.store-wrapper
+  display flex
+  flex-direction row
+  justify-content center
+  flex-wrap wrap
+  height 90vh
+  max-width 1500px
+  margin 30px auto
+
+.dishes
+  background-color green
+
+.order
+  background-color yellow
+
+.inventory
+  background-color red
+
+.store-division
+  flex 1 1 30%
+  background #fff
+  border 10px double #1a1a1a
+  min-width 300px
