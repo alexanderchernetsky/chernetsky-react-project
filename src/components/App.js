@@ -1,13 +1,19 @@
 import React from 'react';
-import Dishes from './Dishes';
+import Menu from './Menu';
 import Order from './Order';
 import Inventory from './Inventory';
+import sampleDishes from '../sample-dishes';
 
 class App extends React.Component {
   state = {
     dishes: {},
     order: {}
   };
+
+  componentDidMount() {
+    const dishes = sampleDishes;
+    this.setState({dishes})
+  }
 
   addDish = dish => {
     const dishes = { ...this.state.dishes };
@@ -19,7 +25,7 @@ class App extends React.Component {
     return (
         <div className="page-wrapper">
           <div className="store-wrapper">
-            <Dishes/>
+            <Menu dishes={this.state.dishes}/>
             <Order/>
             <Inventory addDish={this.addDish}/>
           </div>

@@ -226,6 +226,7 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px;
+  overflow: scroll;
 }
 .store-division__header {
   font-size: 30px;
@@ -282,7 +283,8 @@ table {
   resize: vertical;
   overflow: hidden;
 }
-.addDishForm__button--big {
+.addDishForm__button--big,
+.dish-addButton {
   background: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -291,15 +293,19 @@ table {
   transition: all 0.2;
   position: relative;
   z-index: 2;
+  border: 1px solid #000;
 }
-.addDishForm__button--big:hover {
+.addDishForm__button--big:hover,
+.dish-addButton:hover {
   color: #fff;
   cursor: pointer;
 }
-.addDishForm__button--big:hover:after {
+.addDishForm__button--big:hover:after,
+.dish-addButton:hover:after {
   height: 100%;
 }
-.addDishForm__button--big:after {
+.addDishForm__button--big:after,
+.dish-addButton:after {
   content: "";
   z-index: -1;
   display: block;
@@ -311,4 +317,43 @@ table {
   top: 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+.dish-image {
+  width: 100px;
+  height: 100px;
+  padding-right: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  float: left;
+}
+.dish {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #000;
+}
+.dish:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.dish-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+.dish-price {
+  float: right;
+}
+.dish-addButton[disabled] {
+  cursor: not-allowed;
+  color: #f00;
+  border: 1px solid #f00;
+  font-size: 20px;
+  -webkit-transform: rotate(-20deg) translate(40px, -20px);
+          transform: rotate(-20deg) translate(40px, -20px);
+  background: #fff;
+}
+.dish-addButton[disabled]:after {
+  content: none;
 }

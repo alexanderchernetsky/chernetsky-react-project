@@ -79,6 +79,7 @@
   min-width 300px
   box-sizing border-box
   padding 10px
+  overflow scroll
 
 .store-division__header
   font-size 30px
@@ -123,7 +124,8 @@
   resize vertical
   overflow hidden
 
-.addDishForm__button--big
+.addDishForm__button--big,
+.dish-addButton
   background none
   text-transform uppercase
   font-weight bold
@@ -131,6 +133,7 @@
   transition all 0.2
   position relative
   z-index 2
+  border 1px solid black
   &:hover
     color white
     cursor pointer
@@ -148,3 +151,37 @@
     top 0
     -webkit-transition all .2s
     transition all .2s
+
+.dish-image
+  width 100px
+  height 100px
+  padding-right 5px
+  object-fit cover
+  float left
+
+.dish
+  box-sizing border-box
+  padding 10px
+  margin 5px 0
+  border 1px solid black
+  &:after
+    content ''
+    clear both
+    display block
+
+.dish-header
+  font-weight bold
+  font-size 20px
+
+.dish-price
+  float right
+
+.dish-addButton[disabled]
+  cursor not-allowed
+  color: red
+  border 1px solid red
+  font-size 20px
+  transform rotate(-20deg) translate(40px, -20px)
+  background white
+  &:after
+    content none

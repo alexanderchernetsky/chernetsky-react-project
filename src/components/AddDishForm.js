@@ -5,7 +5,7 @@ class AddDishForm extends React.Component {
   priceRef = React.createRef();
   statusRef = React.createRef();
   descriptionRef = React.createRef();
-  photoRef = React.createRef();
+  imageRef = React.createRef();
 
   createDish = (event) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ class AddDishForm extends React.Component {
       price: this.priceRef.current.value,
       status: this.statusRef.current.value,
       description: this.descriptionRef.current.value,
-      photo: this.photoRef.current.value,
+      image: this.imageRef.current.value,
     };
     this.props.addDish(dish);
     alert('it works!');
@@ -30,7 +30,7 @@ class AddDishForm extends React.Component {
             <option value="unavailable">Нет в наличии</option>
           </select>
           <textarea className="addDishForm__textarea"name="description" id="" placeholder="описание" ref={this.descriptionRef}></textarea>
-          <input className="addDishForm__input--big" type="text" placeholder="фото" ref={this.photoRef}/>
+          <input className="addDishForm__input--big" type="text" placeholder="фото" ref={this.imageRef}/>
           <button className="addDishForm__button--big">+ добавить блюдо</button>
         </form>
     )
