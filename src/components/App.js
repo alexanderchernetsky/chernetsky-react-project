@@ -6,18 +6,25 @@ import sampleDishes from '../sample-dishes';
 
 class App extends React.Component {
   state = {
-    dishes: {},
+    dishes: sampleDishes,
     order: {}
   };
 
-  componentDidMount() {
-    const dishes = sampleDishes;
+  updateDish = (newDish, index) => {
+    const dishes = {...this.state.dishes};
+    dishes[index] = newDish;
     this.setState({dishes})
-  }
+  };
 
   addDish = dish => {
     const dishes = { ...this.state.dishes };
     dishes[`dish${Date.now()}`] = dish;
+    this.setState({dishes});
+  };
+
+  deleteDish = dish => {
+    const dishes = {...this.state.dishes};
+    delete dishes[dish];
     this.setState({dishes});
   };
 
@@ -27,7 +34,7 @@ class App extends React.Component {
           <div className="store-wrapper">
             <Menu dishes={this.state.dishes}/>
             <Order/>
-            <Inventory addDish={this.addDish}/>
+            <Inventory addDish={this.addDish} dishes={this.state.dishes} deleteDish={this.deleteDish} updateDish={this.updateDish}/>
           </div>
         </div>
     )
