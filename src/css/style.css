@@ -1,3 +1,48 @@
+.order__item-enter {
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.order__item-enter.order__item-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.order__item-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.order__item-exit.order__item-exit-active {
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+.order__count-enter {
+  display: inline-block;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.order__count-enter.order__count-enter-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.order__count-exit {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.order__count-exit.order__count-exit-active {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
 html,
 body,
 div,
@@ -207,15 +252,6 @@ table {
   max-width: 1500px;
   margin: 30px auto;
 }
-.dishes {
-  background-color: #008000;
-}
-.order {
-  background-color: #ff0;
-}
-.inventory {
-  background-color: #f00;
-}
 .store-division {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30%;
@@ -226,7 +262,8 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .store-division__header {
   font-size: 30px;
@@ -378,8 +415,14 @@ table {
 .order__count,
 .order__price {
   padding: 0 4px;
+  display: inline-block;
 }
 .order__item {
   padding: 10px 0;
   border-bottom: 1px solid #000;
+}
+.order__count-wrapper {
+  position: relative;
+  overflow: hidden;
+  float: left;
 }

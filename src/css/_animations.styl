@@ -1,0 +1,28 @@
+.order__item-enter
+  transform translateX(-120%)
+  transition 0.25s
+  &.order__item-enter-active
+    transform translateX(0)
+
+.order__item-exit
+  transform translateX(0)
+  transition 0.25s
+  &.order__item-exit-active
+    transform translateX(120%)
+
+.order__count-enter
+  display inline-block
+  transform translateY(100%)
+  transition 0.3s
+  &.order__count-enter-active
+    transform translateY(0)
+
+.order__count-exit
+  position absolute
+  left 0
+  bottom 0
+  display inline-block
+  transform translateY(0)
+  transition 0.3s
+  &.order__count-exit-active
+    transform translateY(-100%)

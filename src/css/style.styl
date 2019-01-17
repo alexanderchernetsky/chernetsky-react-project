@@ -63,15 +63,6 @@
   max-width 1500px
   margin 30px auto
 
-.dishes
-  background-color green
-
-.order
-  background-color yellow
-
-.inventory
-  background-color red
-
 .store-division
   flex 1 1 30%
   background #fff
@@ -79,7 +70,8 @@
   min-width 300px
   box-sizing border-box
   padding 10px
-  overflow scroll
+  overflow-y scroll
+  overflow-x hidden
 
 .store-division__header
   font-size 30px
@@ -199,7 +191,14 @@
 
 .order__count, .order__price
   padding 0 4px
+  display inline-block
+
 
 .order__item
   padding 10px 0
   border-bottom 1px solid black
+
+.order__count-wrapper
+  position relative
+  overflow hidden
+  float left
