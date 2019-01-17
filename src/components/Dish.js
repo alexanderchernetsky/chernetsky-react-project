@@ -12,7 +12,7 @@ class Dish extends React.Component {
             <span className="dish-price">{formatPrice(this.props.details.price)}</span>
           </h3>
           <p className="dish-description">{this.props.details.description}</p>
-          <button disabled={!isAvailable} className="dish-addButton" onClick={() => alert('add to order')}>
+          <button disabled={!isAvailable} className="dish-addButton" onClick={() => this.props.addToOrder(this.props.index)}>
             {(isAvailable)?'Добавить в заказ':'Распродано'}
           </button>
         </li>

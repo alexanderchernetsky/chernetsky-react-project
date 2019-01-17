@@ -7,7 +7,7 @@ class Menu extends React.Component {
         <div className="store-division dishes">
           <h2 className="store-division__header">Меню</h2>
           <ul>
-            {Object.keys(this.props.dishes).map(key => <Dish key={key} details={this.props.dishes[key]}/>)}
+            {Object.keys(this.props.dishes).map(key => <Dish key={key} index={key} details={this.props.dishes[key]} addToOrder={this.props.addToOrder}/>)}
           </ul>
         </div>
     )

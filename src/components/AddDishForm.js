@@ -17,7 +17,6 @@ class AddDishForm extends React.Component {
       image: this.imageRef.current.value,
     };
     this.props.addDish(dish);
-    alert('it works!');
   };
 
   render() {

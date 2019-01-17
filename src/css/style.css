@@ -284,7 +284,9 @@ table {
   overflow: hidden;
 }
 .addDishForm__button--big,
-.dish-addButton {
+.dish-addButton,
+.order__confirm,
+.order__delete {
   background: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -296,16 +298,22 @@ table {
   border: 1px solid #000;
 }
 .addDishForm__button--big:hover,
-.dish-addButton:hover {
+.dish-addButton:hover,
+.order__confirm:hover,
+.order__delete:hover {
   color: #fff;
   cursor: pointer;
 }
 .addDishForm__button--big:hover:after,
-.dish-addButton:hover:after {
+.dish-addButton:hover:after,
+.order__confirm:hover:after,
+.order__delete:hover:after {
   height: 100%;
 }
 .addDishForm__button--big:after,
-.dish-addButton:after {
+.dish-addButton:after,
+.order__confirm:after,
+.order__delete:after {
   content: "";
   z-index: -1;
   display: block;
@@ -356,4 +364,22 @@ table {
 }
 .dish-addButton[disabled]:after {
   content: none;
+}
+.order__delete {
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
+}
+.order__total {
+  font-weight: bold;
+  font-size: 20px;
+}
+.order__count,
+.order__price {
+  padding: 0 4px;
+}
+.order__item {
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
 }

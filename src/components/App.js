@@ -28,12 +28,25 @@ class App extends React.Component {
     this.setState({dishes});
   };
 
+  addToOrder = key => {
+    const order = {...this.state.order};
+    order[key] = order[key] + 1 || 1 ;
+    console.log(order);
+    this.setState({order});
+  };
+
+  removeFromOrder = key => {
+    const order = {...this.state.order};
+    delete order[key];
+    this.setState({order});
+  };
+
   render() {
     return (
         <div className="page-wrapper">
           <div className="store-wrapper">
-            <Menu dishes={this.state.dishes}/>
-            <Order/>
+            <Menu dishes={this.state.dishes} addToOrder={this.addToOrder}/>
+            <Order order={this.state.order} dishes={this.state.dishes} removeFromOrder={this.removeFromOrder}/>
             <Inventory addDish={this.addDish} dishes={this.state.dishes} deleteDish={this.deleteDish} updateDish={this.updateDish}/>
           </div>
         </div>
