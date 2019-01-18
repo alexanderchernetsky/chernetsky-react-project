@@ -43,6 +43,30 @@
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
 html,
 body,
 div,
@@ -178,6 +202,7 @@ table {
   padding: 1px;
 }
 .header {
+  font-family: 'Roboto', sans-serif;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
@@ -185,6 +210,7 @@ table {
   color: #fff;
 }
 .card {
+  font-family: 'Roboto Condensed', sans-serif;
   background-color: #fff;
   width: 300px;
   height: 300px;
@@ -266,16 +292,16 @@ table {
   overflow-x: hidden;
 }
 .store-division__header {
+  font-family: 'Roboto', sans-serif;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
 .addDishForm {
   width: 100%;
-  border: 2px #000;
+  border: 2px solid #000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 2px solid #000;
   margin: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -284,7 +310,6 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  box-sizing: border-box;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -316,6 +341,9 @@ table {
 .addDishForm__button--big {
   width: 100%;
 }
+.addDishForm__button--big {
+  font-family: 'Roboto', sans-serif;
+}
 .addDishForm__textarea {
   resize: vertical;
   overflow: hidden;
@@ -328,8 +356,8 @@ table {
   text-transform: uppercase;
   font-weight: bold;
   padding: 5px;
-  -webkit-transition: all 0.2;
-  transition: all 0.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   position: relative;
   z-index: 2;
   border: 1px solid #000;
@@ -384,23 +412,31 @@ table {
   display: block;
 }
 .dish-header {
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
 .dish-price {
   float: right;
 }
+.dish-addButton {
+  font-family: 'Roboto', sans-serif;
+}
 .dish-addButton[disabled] {
+  font-family: 'Roboto', sans-serif;
   cursor: not-allowed;
   color: #f00;
   border: 1px solid #f00;
   font-size: 20px;
-  -webkit-transform: rotate(-20deg) translate(40px, -20px);
-          transform: rotate(-20deg) translate(40px, -20px);
+  -webkit-transform: rotate(-20deg) translate(40px, -15px);
+          transform: rotate(-20deg) translate(40px, -15px);
   background: #fff;
 }
 .dish-addButton[disabled]:after {
   content: none;
+}
+.dish-description {
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .order__delete {
   padding: 0;
@@ -409,6 +445,7 @@ table {
   margin-left: 4px;
 }
 .order__total {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
@@ -418,6 +455,7 @@ table {
   display: inline-block;
 }
 .order__item {
+  font-family: 'Roboto Condensed', sans-serif;
   padding: 10px 0;
   border-bottom: 1px solid #000;
 }
@@ -425,4 +463,7 @@ table {
   position: relative;
   overflow: hidden;
   float: left;
+}
+.order__confirm {
+  font-family: 'Roboto', sans-serif;
 }

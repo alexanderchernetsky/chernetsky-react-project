@@ -6,6 +6,9 @@ class Order extends React.Component {
   renderOrder = key => {
     const dish = this.props.dishes[key];
     const count = this.props.order[key];
+    if (!dish || this.props.dishes[key].status === 'unavailable') {
+      return null;
+    }
     return (
         <CSSTransition classNames="order__item" key={key} timeout={{enter:250, exit:250}}>
           <li key={key} className="order__item">
@@ -24,7 +27,12 @@ class Order extends React.Component {
 
   render() {
     const orderKeys = Object.keys(this.props.order);
-    const orderPrices = orderKeys.map((key) => this.props.dishes[key].price*this.props.order[key]);
+    const orderPrices = orderKeys.map((key) => {
+      if (!this.props.dishes[key] || this.props.dishes[key].status === 'unavailable') {
+        return 0;
+      }
+      return this.props.dishes[key].price*this.props.order[key];
+    });
     const total = orderPrices.reduce((sum, current) => sum + current , 0);
     return (
         <div className="store-division order">

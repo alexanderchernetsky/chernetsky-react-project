@@ -12,6 +12,7 @@
   padding 1px // to prevent margin collapsing
 
 .header
+  font-family 'Roboto', sans-serif
   font-size 60px
   font-weight bold
   text-align center
@@ -19,6 +20,7 @@
   color: white
 
 .card
+  font-family 'Roboto Condensed', sans-serif
   background-color white
   width 300px
   height 300px
@@ -74,19 +76,18 @@
   overflow-x hidden
 
 .store-division__header
+  font-family 'Roboto', sans-serif
   font-size 30px
   font-weight bold
   text-align center
 
 .addDishForm
   width 100%
-  border 2px black
-  box-sizing border-box
   border 2px solid black
+  box-sizing border-box
   margin 5px 0
   display flex
   flex-direction row
-  box-sizing border-box
   flex-wrap wrap
 
 .addDishForm__textarea,
@@ -112,6 +113,9 @@
 .addDishForm__button--big
   width 100%
 
+.addDishForm__button--big
+  font-family 'Roboto', sans-serif
+
 .addDishForm__textarea
   resize vertical
   overflow hidden
@@ -123,7 +127,7 @@
   text-transform uppercase
   font-weight bold
   padding 5px
-  transition all 0.2
+  transition all 0.2s
   position relative
   z-index 2
   border 1px solid black
@@ -163,21 +167,29 @@
     display block
 
 .dish-header
+  font-family 'Roboto', sans-serif
   font-weight bold
   font-size 20px
 
 .dish-price
   float right
 
+.dish-addButton
+  font-family 'Roboto', sans-serif
+
 .dish-addButton[disabled]
+  font-family 'Roboto', sans-serif
   cursor not-allowed
   color: red
   border 1px solid red
   font-size 20px
-  transform rotate(-20deg) translate(40px, -20px)
+  transform rotate(-20deg) translate(40px, -15px)
   background white
   &:after
     content none
+
+ .dish-description
+   font-family 'Roboto Condensed', sans-serif
 
 .order__delete
   padding 0
@@ -186,6 +198,7 @@
   margin-left 4px
 
 .order__total
+  font-family 'Roboto Condensed', sans-serif
   font-weight bold
   font-size 20px
 
@@ -195,6 +208,7 @@
 
 
 .order__item
+  font-family 'Roboto Condensed', sans-serif
   padding 10px 0
   border-bottom 1px solid black
 
@@ -202,3 +216,6 @@
   position relative
   overflow hidden
   float left
+
+.order__confirm
+  font-family 'Roboto', sans-serif
