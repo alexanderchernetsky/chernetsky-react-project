@@ -9,7 +9,7 @@ function Router() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Welcome}/>
-          <Route path="/store" component={App}/>
+          <Route path="/:store" component={App}/>
           <Route component={NotFound}/>
         </Switch>
       </BrowserRouter>

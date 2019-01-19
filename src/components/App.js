@@ -3,10 +3,11 @@ import Menu from './Menu';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleDishes from '../sample-dishes';
+import base from '../base';
 
 class App extends React.Component {
   state = {
-    dishes: sampleDishes,
+    dishes: {},
     order: {}
   };
 
@@ -24,7 +25,8 @@ class App extends React.Component {
 
   deleteDish = dish => {
     const dishes = {...this.state.dishes};
-    delete dishes[dish];
+    /*delete dishes[dish];*/
+    dishes[dish] = null; // it is the feature of the firebase, simple delete dishes[dish] doesn't work with firebase!!!
     this.setState({dishes});
   };
 
@@ -38,6 +40,19 @@ class App extends React.Component {
     const order = {...this.state.order};
     delete order[key];
     this.setState({order});
+  };
+
+  componentDidMount() {
+    this.ref = base.syncState(`${this.props.match.params.store}/dishes`, {
+      context: this,
+      state: "dishes"
+    });
+
+    /*this.setState({dishes: sampleDishes})*/ // this string is necessary only to load sample dishes
+  };
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   };
 
   render() {
