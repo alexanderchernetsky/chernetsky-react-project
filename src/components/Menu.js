@@ -1,7 +1,13 @@
 import React from 'react';
 import Dish from './Dish';
+import PropTypes from 'prop-types';
 
 class Menu extends React.Component {
+  static propTypes = {
+    dishes: PropTypes.object,
+    addToOrder: PropTypes.func,
+  };
+
   render() {
     return (
         <div className="store-division dishes">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
 
 function Welcome(props) {
   return (
@@ -9,5 +10,9 @@ function Welcome(props) {
       </div>
   )
 }
+
+Welcome.propTypes = {
+  history: PropTypes.object
+};
 
 export default Welcome;

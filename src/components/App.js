@@ -43,6 +43,9 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    const localStorageRef = localStorage.getItem('pizza-store-order');
+    this.setState({order: JSON.parse(localStorageRef)});
+
     this.ref = base.syncState(`${this.props.match.params.store}/dishes`, {
       context: this,
       state: "dishes"
@@ -50,6 +53,10 @@ class App extends React.Component {
 
     /*this.setState({dishes: sampleDishes})*/ // this string is necessary only to load sample dishes
   };
+
+  componentDidUpdate() {
+    localStorage.setItem('pizza-store-order', JSON.stringify(this.state.order));
+  }
 
   componentWillUnmount() {
     base.removeBinding(this.ref);

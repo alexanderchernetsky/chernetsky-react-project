@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AddDishForm extends React.Component {
+  static propTypes = {
+    addDish: PropTypes.func,
+  };
+
   nameRef = React.createRef();
   priceRef = React.createRef();
   statusRef = React.createRef();
@@ -11,7 +16,7 @@ class AddDishForm extends React.Component {
     event.preventDefault();
     const dish = {
       name: this.nameRef.current.value,
-      price: this.priceRef.current.value,
+      price: Number(this.priceRef.current.value),
       status: this.statusRef.current.value,
       description: this.descriptionRef.current.value,
       image: this.imageRef.current.value,
@@ -28,7 +33,7 @@ class AddDishForm extends React.Component {
             <option value="available">В наличии</option>
             <option value="unavailable">Нет в наличии</option>
           </select>
-          <textarea className="addDishForm__textarea"name="description" id="" placeholder="описание" ref={this.descriptionRef}></textarea>
+          <textarea className="addDishForm__textarea" name="description" id="" placeholder="описание" ref={this.descriptionRef}></textarea>
           <input className="addDishForm__input--big" type="text" placeholder="фото" ref={this.imageRef}/>
           <button className="addDishForm__button--big">+ добавить блюдо</button>
         </form>

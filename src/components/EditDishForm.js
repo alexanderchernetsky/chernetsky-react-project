@@ -1,13 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class EditDishForm extends React.Component {
+  static propTypes = {
+    deleteDish: PropTypes.func,
+    index: PropTypes.string,
+    updateDish: PropTypes.func,
+    dishes: PropTypes.object,
+  };
+
   deleteDish = (event) => {
-        event.preventDefault();
-        this.props.deleteDish(this.props.index);
+    event.preventDefault();
+    this.props.deleteDish(this.props.index);
   };
 
   handleChange = (event) => {
-    const changedValue = event.currentTarget.value;
+    let changedValue;
+    if (event.currentTarget.name === 'price') {
+      changedValue = Number(event.currentTarget.value);
+      if (isNaN(changedValue)) {
+        return
+      }
+    } else {
+      changedValue = event.currentTarget.value
+    }
     const dish = this.props.dishes[this.props.index];
     dish[event.currentTarget.name] = changedValue;
     this.props.updateDish(dish, this.props.index)

@@ -1,7 +1,20 @@
 import React from 'react';
 import {formatPrice} from '../helpers';
+import PropTypes from 'prop-types';
 
 class Dish extends React.Component {
+  static propTypes = {
+    addToOrder: PropTypes.func,
+    index: PropTypes.string,
+    details: PropTypes.shape({
+      status: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      description: PropTypes.string,
+    })
+  };
+
   render() {
     const isAvailable = this.props.details.status === 'available';
     return (

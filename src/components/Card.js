@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
+  static propTypes = {
+    history: PropTypes.object,
+  };
+
   handleClick = () => {
     this.props.history.push('/store');
   };
