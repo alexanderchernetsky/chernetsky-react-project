@@ -50,8 +50,10 @@ class App extends React.Component {
       context: this,
       state: "dishes"
     });
+  };
 
-    /*this.setState({dishes: sampleDishes})*/ // this string is necessary only to load sample dishes
+  loadSampleDishes = () => {
+    this.setState({dishes: sampleDishes});
   };
 
   componentDidUpdate() {
@@ -68,7 +70,7 @@ class App extends React.Component {
           <div className="store-wrapper">
             <Menu dishes={this.state.dishes} addToOrder={this.addToOrder}/>
             <Order order={this.state.order} dishes={this.state.dishes} removeFromOrder={this.removeFromOrder}/>
-            <Inventory addDish={this.addDish} dishes={this.state.dishes} deleteDish={this.deleteDish} updateDish={this.updateDish}/>
+            <Inventory addDish={this.addDish} dishes={this.state.dishes} deleteDish={this.deleteDish} updateDish={this.updateDish} loadSampleDishes={this.loadSampleDishes}/>
           </div>
         </div>
     )
