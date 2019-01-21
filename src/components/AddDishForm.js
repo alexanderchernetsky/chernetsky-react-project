@@ -6,6 +6,10 @@ class AddDishForm extends React.Component {
     addDish: PropTypes.func,
   };
 
+  state = {
+    valid: true,
+  };
+
   nameRef = React.createRef();
   priceRef = React.createRef();
   statusRef = React.createRef();
@@ -14,6 +18,10 @@ class AddDishForm extends React.Component {
 
   createDish = (event) => {
     event.preventDefault();
+    if (this.priceRef.current.value.search(/\D/) !== -1) {
+      this.setState({valid: false});
+      return
+    }
     const dish = {
       name: this.nameRef.current.value,
       price: Number(this.priceRef.current.value),
@@ -21,12 +29,14 @@ class AddDishForm extends React.Component {
       description: this.descriptionRef.current.value,
       image: this.imageRef.current.value,
     };
+    this.setState({valid: true});
     this.props.addDish(dish);
   };
 
   render() {
     return (
         <form className="addDishForm" onSubmit={this.createDish}>
+          {this.state.valid ? null : <div className="addDishForm__prompt">Поле цена должно содержать только цифры!</div>}
           <input className="addDishForm__input--small" type="text" placeholder="название" ref={this.nameRef}/>
           <input className="addDishForm__input--small" type="text" placeholder="цена" ref={this.priceRef}/>
           <select className="addDishForm__select" name="status" id="" ref={this.statusRef}>

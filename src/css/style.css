@@ -317,7 +317,8 @@ table {
 .addDishForm__input--big,
 .addDishForm__button--big,
 .addDishForm__input--small,
-.addDishForm__select {
+.addDishForm__select,
+.addDishForm__prompt {
   padding: 10px;
   border: 0;
   border-bottom: 1px solid #000;
@@ -329,7 +330,8 @@ table {
 .addDishForm__input--big:focus,
 .addDishForm__button--big:focus,
 .addDishForm__input--small:focus,
-.addDishForm__select:focus {
+.addDishForm__select:focus,
+.addDishForm__prompt:focus {
   background-color: #ffffe0;
 }
 .addDishForm__input--small,
@@ -339,11 +341,16 @@ table {
 .addDishForm__textarea,
 .addDishForm__input--big,
 .addDishForm__button--big,
-.load__button {
+.load__button,
+.addDishForm__prompt {
   width: 100%;
 }
-.addDishForm__button--big {
+.addDishForm__button--big,
+.addDishForm__prompt {
   font-family: 'Roboto', sans-serif;
+}
+.addDishForm__prompt {
+  color: #f00;
 }
 .addDishForm__textarea {
   resize: vertical;
