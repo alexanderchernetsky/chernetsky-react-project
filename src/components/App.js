@@ -44,7 +44,9 @@ class App extends React.Component {
 
   componentDidMount() {
     const localStorageRef = localStorage.getItem('pizza-store-order');
-    this.setState({order: JSON.parse(localStorageRef)});
+    if (localStorageRef) {
+      this.setState({order: JSON.parse(localStorageRef)});
+    }
 
     this.ref = base.syncState(`${this.props.match.params.store}/dishes`, {
       context: this,
