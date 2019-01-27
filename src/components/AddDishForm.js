@@ -36,7 +36,7 @@ class AddDishForm extends React.Component {
   render() {
     return (
         <form className="addDishForm" onSubmit={this.createDish}>
-          {this.state.valid ? null : <div className="addDishForm__prompt">Поле цена должно содержать только цифры!</div>}
+          {!this.state.valid&&<div className="addDishForm__prompt">Поле цена должно содержать только цифры!</div>}
           <input className="addDishForm__input--small" type="text" placeholder="название" ref={this.nameRef}/>
           <input className="addDishForm__input--small" type="text" placeholder="цена" ref={this.priceRef}/>
           <select className="addDishForm__select" name="status" id="" ref={this.statusRef}>

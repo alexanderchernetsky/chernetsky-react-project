@@ -10,48 +10,35 @@ class Inventory extends React.Component {
   static propTypes = {
     dishes: PropTypes.object,
     deleteDish: PropTypes.func,
-    updateDish: PropTypes.func
+    updateDish: PropTypes.func,
+    loadSampleDishes: PropTypes.func,
   };
 
   state = {
     signedIn: false,
+    uid: null,
   };
 
-  authHandler = () => {
-    alert('handler works!');
-
-  };
-
-  authenticate = () => {
-    alert('authenticate works!');
-    firebaseApp.auth().signInAnonymously();
-    firebaseApp.auth().onAuthStateChanged(function(user) {
-      alert('onAuthStateChangedWorks!');
-
-      console.log(user);
-      /*if (user) {
-        // User is signed in.
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        // ...
-      } else {
-        // User is signed out.
-        // ...
+  componentDidMount() {
+    firebaseApp.auth().onAuthStateChanged( user => {
+      if (user) {
+        this.setState({signedIn: true, uid: user.uid})
       }
-      // ...*/
     });
-    this.setState({ signedIn: true});
+  }
+
+  authenticate = async () => {
+    await firebaseApp.auth().signInAnonymously();
   };
 
   logOut = async () => {
-    alert('logOut works!');
     await firebase.auth().signOut();
-    this.setState({signedIn: false});
+    this.setState({signedIn: false, uid: null});
   };
 
   render() {
     if (!this.state.signedIn) {
-      return <Login authenticate={this.authenticate} logOut={this.logOut}/>;
+      return <Login authenticate={this.authenticate}/>;
     }
     return (
         <div className="store-division inventory">
@@ -61,7 +48,6 @@ class Inventory extends React.Component {
               <EditDishForm key={key} index={key} dishes={this.props.dishes} deleteDish={this.props.deleteDish} updateDish={this.props.updateDish}/>)}
           <AddDishForm addDish={this.props.addDish}/>
           <button className="load__button" onClick={this.props.loadSampleDishes}>Загрузить шаблонные блюда</button>
-
         </div>
     )
   }
