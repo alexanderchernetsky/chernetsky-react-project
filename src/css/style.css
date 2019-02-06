@@ -1,0 +1,520 @@
+.order__item-enter {
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.order__item-enter.order__item-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.order__item-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.order__item-exit.order__item-exit-active {
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+.order__count-enter {
+  display: inline-block;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.order__count-enter.order__count-enter-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.order__count-exit {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.order__count-exit.order__count-exit-active {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.page-wrapper {
+  background-image: url("../images/pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1px;
+}
+.card {
+  font-family: 'Roboto Condensed', sans-serif;
+  border: 10px double #1a1a1a;
+  background-color: #fff;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.card:hover {
+  -webkit-box-shadow: 5px 5px 10px rgba(255,255,255,0.75), -5px -5px 10px rgba(255,255,255,0.75);
+          box-shadow: 5px 5px 10px rgba(255,255,255,0.75), -5px -5px 10px rgba(255,255,255,0.75);
+  cursor: pointer;
+}
+.card__caption {
+  padding-bottom: 10px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+.card__caption:hover {
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.75);
+}
+.card__picture {
+  background-image: url("../images/pizza-sketch.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+}
+.store-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 90vh;
+  max-width: 1500px;
+  margin: 30px auto;
+}
+.store-division {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  background: #fff;
+  border: 10px double #1a1a1a;
+  min-width: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.store-division__header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.addDishForm {
+  width: 100%;
+  border: 2px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.addDishForm__textarea,
+.addDishForm__input--big,
+.addDishForm__button--big,
+.addDishForm__input--small,
+.addDishForm__select,
+.addDishForm__prompt {
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.addDishForm__textarea:focus,
+.addDishForm__input--big:focus,
+.addDishForm__button--big:focus,
+.addDishForm__input--small:focus,
+.addDishForm__select:focus,
+.addDishForm__prompt:focus {
+  background-color: #ffffe0;
+}
+.addDishForm__input--small,
+.addDishForm__select {
+  width: 33.33%;
+}
+.addDishForm__textarea,
+.addDishForm__input--big,
+.addDishForm__button--big,
+.load__button,
+.addDishForm__prompt {
+  width: 100%;
+}
+.addDishForm__button--big,
+.addDishForm__prompt {
+  font-family: 'Roboto', sans-serif;
+}
+.addDishForm__prompt {
+  color: #f00;
+}
+.addDishForm__textarea {
+  resize: vertical;
+  overflow: hidden;
+}
+.addDishForm__button--big,
+.dish-addButton,
+.order__confirm,
+.order__delete,
+.load__button,
+.logout__button {
+  background: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 2;
+  border: 1px solid #000;
+}
+.addDishForm__button--big:hover,
+.dish-addButton:hover,
+.order__confirm:hover,
+.order__delete:hover,
+.load__button:hover,
+.logout__button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.addDishForm__button--big:hover:after,
+.dish-addButton:hover:after,
+.order__confirm:hover:after,
+.order__delete:hover:after,
+.load__button:hover:after,
+.logout__button:hover:after {
+  height: 100%;
+}
+.addDishForm__button--big:after,
+.dish-addButton:after,
+.order__confirm:after,
+.order__delete:after,
+.load__button:after,
+.logout__button:after {
+  content: "";
+  z-index: -1;
+  display: block;
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.dish-image {
+  width: 100px;
+  height: 100px;
+  padding-right: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  float: left;
+}
+.dish {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #000;
+}
+.dish:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.dish-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+.dish-price {
+  float: right;
+}
+.dish-addButton {
+  font-family: 'Roboto', sans-serif;
+}
+.dish-addButton[disabled] {
+  font-family: 'Roboto', sans-serif;
+  cursor: not-allowed;
+  color: #f00;
+  border: 1px solid #f00;
+  font-size: 20px;
+  -webkit-transform: rotate(-20deg) translate(40px, -15px);
+          transform: rotate(-20deg) translate(40px, -15px);
+  background: #fff;
+}
+.dish-addButton[disabled]:after {
+  content: none;
+}
+.dish-description {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.order__delete {
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
+}
+.order__total {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+.order__count,
+.order__price {
+  padding: 0 4px;
+  display: inline-block;
+}
+.order__item {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+}
+.order__count-wrapper {
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+.order__confirm {
+  font-family: 'Roboto', sans-serif;
+}
+.login__paragraph {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+}
+.login__button {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  background: #82d465;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 2;
+  border: none;
+  color: #fff;
+}
+.login__button:hover {
+  cursor: pointer;
+}
+.login__button:hover:after {
+  height: 100%;
+}
+.login__button:after {
+  content: "";
+  z-index: -1;
+  display: block;
+  background: #5cc437;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.logout__button {
+  float: right;
+  margin: 5px;
+}
