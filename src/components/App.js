@@ -68,7 +68,7 @@ class App extends React.Component {
 
   render() {
     return (
-        <div className="page-wrapper">
+        <div className="store-page-wrapper">
           <div className="store-wrapper">
             <Menu dishes={this.state.dishes} addToOrder={this.addToOrder}/>
             <Order order={this.state.order} dishes={this.state.dishes} removeFromOrder={this.removeFromOrder}/>

@@ -201,6 +201,10 @@ table {
           box-sizing: border-box;
   padding: 1px;
 }
+.store-page-wrapper {
+  padding: 1px;
+  background-image: url("../images/pizza.jpg");
+}
 .card {
   font-family: 'Roboto Condensed', sans-serif;
   border: 10px double #1a1a1a;
@@ -267,7 +271,7 @@ table {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 90vh;
+  min-height: 90vh;
   max-width: 1500px;
   margin: 30px auto;
 }
